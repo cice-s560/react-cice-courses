@@ -1,4 +1,6 @@
 {
-  "*.js": "eslint",
+  "linters": {
+    "*.js": "eslint"
+  },
   "ignore": ["**/node_modules", "package.json"]
 }
