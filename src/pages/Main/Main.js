@@ -7,17 +7,15 @@ import MyCourses from "../MyCourses";
 import NotFound from "../NotFound";
 
 const Main = () => (
-  <React.Fragment>
+  <BrowserRouter>
     <AppHeader />
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/catalog" component={Catalog} />
-        <Route path="/my-courses" component={MyCourses} />
-        <Route component={NotFound} />
-      </Switch>
-    </BrowserRouter>
-  </React.Fragment>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/catalog" component={Catalog} />
+      <Route path="/my-courses" component={MyCourses} />
+      <Route component={NotFound} />
+    </Switch>
+  </BrowserRouter>
 );
 
 export default Main;
