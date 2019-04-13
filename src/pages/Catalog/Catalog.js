@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import { addCourse } from "../../state/actions/courses-actions";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-class Catalog extends React.Component {
+export class CatalogComponent extends React.Component {
   state = {
     name: ""
   };
@@ -27,9 +27,10 @@ class Catalog extends React.Component {
         </header>
         <article>
           <ul>
-            {this.props.courses.map((course, index) => (
-              <li key={index}>{course.name}</li>
-            ))}
+            {this.props.courses &&
+              this.props.courses.map((course, index) => (
+                <li key={index}>{course.name}</li>
+              ))}
           </ul>
         </article>
         {this.props.isLoading && <CircularProgress />}
@@ -56,4 +57,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Catalog);
+)(CatalogComponent);
